@@ -35,8 +35,7 @@ Once compilation is successful, perform a "verification" of the system as follow
 }}}
 
 This command will run JUnit, Checkstyle, PMD, !JavaDoc, and !FindBugs, and fail the build if any warnings are issued by these tools.  It will also download these packages using Ivy.  
-
-If the verification does not succeed, then contact the [http://groups.google.com/group/robocode-sht-michelangelo-discuss mailing list] for help before proceeding. 
+ 
 
 == 3.0 Development Guidelines ==
 
