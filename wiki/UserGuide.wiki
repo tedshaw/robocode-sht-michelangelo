@@ -1,5 +1,5 @@
 #summary How to use the prepackaged Michelangelo robot
-#labels robocode,Featured
+#labels Featured
 
 *Table of Contents* 
 <wiki:toc max_depth="3" />
