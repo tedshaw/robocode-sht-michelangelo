@@ -14,10 +14,19 @@
   <!-- Download SCLC from Ivy if necessary. -->
   <property name="sclc.install.dir" location="${lib.dir}/sclc" />
   <target name="install-sclc" depends="install-ivy">
-    <ivy:retrieve module="sclc" organisation="edu.hawaii.ics.csdl" revision="${sclc.version}" pattern="${lib.dir}/sclc/[artifact].[ext]" sync="true" inline="true" log="download-only" type="script" />
-  </target> 
-    
-  <target name="sclc.tool" depends="compile, install-sclc" description="Compute size data on the source code using SCLC.">
+    <ivy:retrieve module="sclc"
+                  organisation="edu.hawaii.ics.csdl"
+                  revision="${sclc.version}"
+                  pattern="${lib.dir}/sclc/[artifact].[ext]"
+                  sync="true"
+                  inline="true"
+                  log="download-only"
+                  type="script" />
+  </target>
+
+  <target name="sclc.tool"
+          depends="compile, install-sclc"
+          description="Compute size data on the source code using SCLC.">
     <mkdir dir="${sclc.dir}" />
     <!-- Run size data using SCLC.  Invoke Perl via the exec task to run SCLC. -->
     <exec executable="perl" dir="${build.dir}">
