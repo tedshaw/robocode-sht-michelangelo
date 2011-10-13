@@ -7,46 +7,46 @@
   <property name="tmp.dir" location="${basedir}/tmp" />
   <property name="tmp.lib.dir" location="${basedir}/tmp-lib" />
   <property name="build.jar.dir" location="${build.dir}/jar" />
-  
+
   <!-- Info for robot. robot.author.id must also be the package where the robot is located. -->
-  <property name="robot.author.name" value="Ted Shaw"/>
-  <property name="robot.author.id" value="sht"/>
-  <property name="robot.name" value="Michelangelo"/>
-  <property name="robot.webpage" value="http://tedmshaw.blogspot.com/2011/09/Michelangelo.html"/>
-  <property name="robot.description" 
-    value="Kills robots."/>
-  <property name="robocode.version" value=" 1.7.2.3"/>
+  <property name="robot.author.name" value="Ted Shaw" />
+  <property name="robot.author.id" value="sht" />
+  <property name="robot.name" value="Michelangelo" />
+  <property name="robot.webpage" value="http://tedmshaw.blogspot.com/2011/09/Michelangelo.html" />
+  <property name="robot.description" value="Kills robots." />
+  <property name="robocode.version" value=" 1.7.2.3" />
 
   <delete dir="${build.jar.dir}" quiet="true" />
-  
-  
+
+
 
   <target name="jar" depends="compile" description="Create sht-michelangelo.jar">
     <!-- Define the directories and distribution name -->
     <mkdir dir="${tmp.dir}" />
     <mkdir dir="${build.jar.dir}" />
-    
+
     <!-- Copy over java and class files. -->
     <copy todir="${tmp.dir}">
       <fileset dir="${basedir}/build/classes" />
       <fileset dir="${basedir}/src" />
     </copy>
-    
+
     <!-- Create the robot properties file. -->
     <propertyfile file="${tmp.dir}/${robot.author.id}/${robot.name}.properties">
-      <entry key="robot.webpage" value="${robot.webpage}"/>
-      <entry key="robot.description" value="${robot.description}"/>
+      <entry key="robot.webpage" value="${robot.webpage}" />
+      <entry key="robot.description" value="${robot.description}" />
       <entry key="robot.version" value="${version}" />
-      <entry key="robot.author.name" value="${robot.author.name}"/>
-      <entry key="robot.classname" value="${robot.author.id}.${robot.name}"/>
+      <entry key="robot.author.name" value="${robot.author.name}" />
+      <entry key="robot.classname" value="${robot.author.id}.${robot.name}" />
       <entry key="robocode.version" value="${robocode.version}" />
     </propertyfile>
     <!-- Echo the contents of the file so that the developer can proof-read for errors. -->
     <concat>
-      <fileset file="${tmp.dir}/${robot.author.id}/${robot.name}.properties"/>
+      <fileset file="${tmp.dir}/${robot.author.id}/${robot.name}.properties" />
     </concat>
 
-    <jar destfile="${build.jar.dir}/${robot.author.id}.${robot.name}_${version}.jar" basedir="${tmp.dir}">
+    <jar destfile="${build.jar.dir}/${robot.author.id}.${robot.name}_${version}.jar"
+         basedir="${tmp.dir}">
       <manifest>
         <attribute name="robots" value="${robot.name}" />
       </manifest>
