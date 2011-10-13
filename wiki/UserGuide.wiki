@@ -1,14 +1,19 @@
-#summary How to use the prepackaged Michelangelo robot.
+#summary How to use the prepackaged Michelangelo robot
 #labels robocode
 
-= Introduction =
+*Table of Contents* 
+<wiki:toc max_depth="3" />
 
-Add your content here.
+= 1.0 Download =
 
+Please download the latest distribution of !Michelangelo from the [http://code.google.com/p/robocode-sht-michelangelo/downloads/list Downloads] page.
 
-= Details =
+Then, unzip the distribution. 
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+= 2.0 Install =
+
+To install the prepackaged !Michelangelo robot, find the file named sht.!Michelangelo`_`{version}.jar in the distribution (where {version} is the version of the robot). 
+
+Move that file to the robots/ directory of your Robocode installation. 
+
+You're done!
