@@ -17,6 +17,8 @@
            printsummary="withOutAndErr"
            haltonfailure="${junit.haltonfailure}"
            fork="yes">
+      <!-- Following line is needed to enable this project to build under CI using Jenkins.-->
+      <jvmarg value="-Djava.awt.headless=true" />
       <classpath>
         <pathelement location="${build.dir}/classes" />
         <path refid="compile.classpath" />
