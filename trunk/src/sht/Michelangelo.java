@@ -26,7 +26,7 @@ public class Michelangelo extends Robot {
    */
   public void run() {
     pos = 1;
-    BF_WIDTH = getBattleFieldWidth();
+    BF_WIDTH = getBattleFieldWidth()
     BF_HEIGHT = getBattleFieldHeight();
     ROBOT_WIDTH = getWidth();
     Color DARK_GREEN = new Color(0, 100, 0);
